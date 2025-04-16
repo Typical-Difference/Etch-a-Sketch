@@ -2,7 +2,21 @@
 
 }
 
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
+#rgb, #opacity, #change-size, #grayscale{
+    flex: 1 1 1;
+    margin: 10px;
+    border-radius: 3px;
+    color: white;
+    background-color: rgb(255, 0, 144);
+}
+
 #container-div{
+    aspect-ratio: 1 / 1;
     margin: auto;
     justify-self: center;
     background-color: blue;
@@ -12,13 +26,12 @@
     border: 5px solid yellow;
     flex-wrap: wrap;
     flex-direction: row;
-    height: 320px;
-    width: 320px;
+
 }
 
 .grid-item{
-    flex: 1 0;
+    aspect-ratio: 1 / 1;
+    flex: 1 0 6.25%;
     background-color: red;
     border: 2px solid black;
-    padding: 8px;
 }
