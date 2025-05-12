@@ -2,8 +2,19 @@
 const containerDiv = document.getElementById('container-div');
 
 //Create child elements to the above parent element
-const size = document.getElementById('user-prompt').value;
-gridNew(16);
+const button = document.getElementById('change-size');
+button.addEventListener('click', () =>{
+    const gridSize = document.getElementById('user-prompt').value;
+    if(gridSize > 0 && gridSize < 100){
+        clearGrid();
+        gridNew(gridSize);
+    }
+})
+
+function clearGrid(){
+    containerDiv.innerHTML = '';
+}
+
 //Grid print function
 function gridNew(size){
     for(let i = 0; i < size * size; i++){
