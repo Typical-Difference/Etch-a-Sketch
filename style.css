@@ -17,21 +17,22 @@
 
 #container-div{
     aspect-ratio: 1 / 1;
-    margin: auto;
+    max-width: 600px;
+    max-height: 600px;
+    margin: 30px auto;
     justify-self: center;
     background-color: blue;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid yellow;
+    border: 5px solid red;
     flex-wrap: wrap;
     flex-direction: row;
 
 }
 
 .grid-item{
-    aspect-ratio: 1 / 1;
-    flex: 1 0 6.25%;
-    background-color: red;
-    border: 2px solid black;
+    box-sizing: border-box;
+    background-color: white ;
+    border: 0.5px solid black;
 }
