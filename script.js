@@ -51,7 +51,8 @@ function gridNew(size){
         gridItem.classList.add('grid-item');
         gridItem.style.width = squareSize + 'px';
         gridItem.style.height = squareSize + 'px';
-        //console.log(squareSize, gridItem);
+        gridItem.dataset.opacity = 0;
+        gridItem.style.backgroundColor = 'white';
         containerDiv.appendChild(gridItem);
     }
 }
@@ -73,8 +74,12 @@ containerDiv.addEventListener('mouseover', (item) => {
             item.target.style.backgroundColor = getRandomColor();
         }
         else if(choiceOfChange == choices[2]){
-            opacityPercentage += 0.1; 
-            item.target.style.backgroundColor = `rgba(0 0 0 / ${opacityPercentage}%)`;
+            let currentOpacity = parseFloat(item.target.dataset.opacity) || 0;
+            if(currentOpacity <= 100){
+                currentOpacity += 10;
+                item.target.dataset.opacity = currentOpacity;
+                item.target.style.backgroundColor = `rgba(0,0,0,${currentOpacity}%)`;
+            }
         }
     }
 });
